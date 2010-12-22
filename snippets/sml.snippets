@@ -1,0 +1,36 @@
+snippet local
+	local
+		${1}
+	in
+		{VISUAL}
+	end
+snippet let
+	let
+		${1}
+	in
+		{VISUAL}
+	end
+snippet fun
+	fun ${1:name}(${2:args}):${3:type} = ${4:expr}
+snippet fn
+	fn (${1:args}):${2:type} => ${3:expr}
+snippet case
+	case ${1:match}
+		of pattern_1 => exp_1
+		 | pattern_2 => exp_2
+			 ...
+		 | pattern_n => exp_n
+snippet main
+	fun print_args(args: string list):unit = case args
+		of nil => ()
+		 | h :: tail =>(
+				print h;
+				print "\n";
+				print_args tail
+			);
+
+
+	fn (name:string, args:string list) => (
+		print_args args;
+		OS.Process.success)
+	)
