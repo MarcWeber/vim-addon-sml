@@ -1,0 +1,23 @@
+vim-addon-sml:
+very minimalistic sml support:
+  - toggle .sml and .sig files
+  - override .sml default filetype assignment
+  - mlton sml compilation mapping (-> vim-addon-actions)
+  - some snipmate snippets
+
+There is still much left to be done..
+
+I recommend adding this to ~/.ctags file. The default .sml parser provided by
+exuberant ctags is not good enough - so I abuse the ocmal parser (which parses
+data structures perfectly) augmenting it by sml specific structure, ...
+regeulare expressions
+
+--langmap=OCaml:.sml
+--regex-OCaml=/^[ \t]*datatype[ \t]+([A-Z'a-z0-9_]+)/\1/d,datatype/
+--regex-OCaml=/^[ \t]*and[ \t]+([A-Z'a-z0-9_]+)/\1/d,datatype/
+--regex-OCaml=/^[ \t]*withtype[ \t]+([A-Z'a-z0-9_]+)/\1/w,withtype/
+--regex-OCaml=/^[ \t]*structure[ \t]+([A-Z'a-z0-9_]+)/\1/s,structure/
+--regex-OCaml=/^[ \t]*signature[ \t]+([A-Z'a-z0-9_]+)/\1/S,signature/
+--regex-OCaml=/[ \t]*val[ \t]+([A-Z'a-z0-9_]+)/\1/v,val/
+--regex-OCaml=/^[ \t]*fun[ \t]+([A-Z'a-z0-9_]+)/\1/f,fun/
+--regex-OCaml=/^[ \t]*type[ \t]+([A-Z'a-z0-9_]+)/\1/t,type/

@@ -2,13 +2,13 @@ if exists("loaded_matchit")
     let b:match_ignorecase=0
     let old = exists('b:match_words') ? b:match_words.',' : ''
 
-     " 1) struct .. end
+     " 1) structure .. end
      " 2) let .. in .. end
-     " 3) sig .. end
+     " 3) signature .. end
      " 3) local .. end
      " TODO
      let b:match_words =
-     \  '\<\%(let\|local\|struct\|sig\)\>:\<in\>:\<end\>'
+     \  '\<\%(let\|local\|structure\|signature\)\>:\<in\>:\<end\>'
 
      " jump to next functions
      let b:match_words .=

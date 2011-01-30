@@ -30,7 +30,29 @@ snippet main
 			);
 
 
-	fn (name:string, args:string list) => (
+	fn (name:string, args:string list):OS.Process.status => (
 		print_args args;
 		OS.Process.success)
 	)
+snippet signature
+	signature Search :> SEARCH = sig
+	end
+
+snippet structure
+	structure Search :> SEARCH = struct
+	end
+
+snippet main_signature
+	(* must be Test *)
+	signature Test = sig
+		val main : string * string list -> OS.Process.status
+	end
+snippet main_structure
+	(* must be Test *)
+	structure Test = struct
+		fun main(name:string, args:string list): OS.Process.status = (
+			print (!a);
+			OS.Process.success
+		)
+	end
+
