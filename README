@@ -4,6 +4,7 @@ very minimalistic sml support:
   - override .sml default filetype assignment
   - mlton sml compilation mapping (-> vim-addon-actions)
   - some snipmate snippets
+  - % matchit support for some struct / let .. constructs
 
 There is still much left to be done..
 
