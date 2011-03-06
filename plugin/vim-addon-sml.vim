@@ -15,7 +15,7 @@ call actions#AddAction('run mlton', {'action': funcref#Function('actions#Compile
 
 
 " toggle .sig <-> .sml
-exec scriptmanager#DefineAndBind('s:l','g:vim_addon_toggle_buffer','{}')
+exec vam#DefineAndBind('s:l','g:vim_addon_toggle_buffer','{}')
 let s:l['sml_sml'] = funcref#Function('return vim_addon_toggle#Substitute('.string('\.sml').','.string('.sig').')')
 let s:l['sml_sig'] = funcref#Function('return vim_addon_toggle#Substitute('.string('\.sig').','.string('.sml').')')
 
