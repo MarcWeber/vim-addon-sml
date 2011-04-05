@@ -7,6 +7,7 @@ let s:efm = 'set efm=%f:%l.%c%m'
 
 " smlnj
 call actions#AddAction('run smlnj', {'action': funcref#Function('actions#CompileRHSSimple', {'args': [[s:efm], ["sml", funcref#Function('return expand("%")')]]})})
+call actions#AddAction('run heap sml @SMLload', {'action': funcref#Function('actions#CompileRHSSimple', {'args': [[s:efm], ["sml", funcref#Function('return "@SMLload=".actions#AskFile(".86-linux heap file:", ["*.x86-linux"])')]]})})
 call actions#AddAction('run ml-build', {'action': funcref#Function('actions#CompileRHSSimple', {'args': [[s:efm], ["ml-build", funcref#Function('return actions#AskFile(".cm file:", ["*.cm"])')]]})})
 
 "mlton
